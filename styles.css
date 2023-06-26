@@ -17,6 +17,13 @@ body {
 .inactive {
     display: none;
 }
+.darken {
+  width: 100%;
+  height: calc(100%);
+  position: fixed;
+  top: 61px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
 
 
 /* Navbar (general) */
@@ -170,13 +177,13 @@ nav {
     box-sizing: border-box;
     position: absolute;
     right: 0;
-    background-color: var(--white);
+    background-color: var(--white); 
   }
 
 
   /* Shopping cart */
   #shopping-cart {
-    padding: 0px 24px;
+    padding: 0px 12px 24px 12px;
   }
   .title-container {
     display: flex;
@@ -184,6 +191,7 @@ nav {
   .title-container img {
     transform: rotate(180deg);
     margin-right: 14px;
+    cursor: pointer;
   }
   .title {
     font-size: var(--lg);
@@ -215,8 +223,12 @@ nav {
     display: grid;
     grid-template-columns: auto 1fr auto auto;
     gap: 16px;
-    margin-bottom: 24px;
+    margin: 12px 0px 12px 0px;
     align-items: center;
+    padding: 8px;
+  }
+  .shopping-cart:hover {
+    font-weight: bold;
   }
   .shopping-cart figure {
     margin: 0;
@@ -227,10 +239,13 @@ nav {
     border-radius: 20px;
     object-fit: cover;
   }
-  .shopping-cart p:nth-child(2) {
+  .delete-cart-item {
+    cursor: pointer;
+  }
+  .name {
     color: var(--very-light-pink);
   }
-  .shopping-cart p:nth-child(3) {
+  .price {
     font-size: var(--md);
     font-weight: bold;
   }
@@ -248,6 +263,9 @@ nav {
 
   
   /* Product detail */
+  #product-detail {
+    padding: 0px 8px 24px 8px;
+  }
   .product-detail-close {
     background: var(--white);
     width: 14px;
@@ -261,6 +279,9 @@ nav {
   }
   .product-detail-close:hover {
     cursor: pointer;
+  }
+  .product-detail-close:active {
+    background-color: var(--text-input-field);
   }
   #product-detail > img:nth-child(2) {
     width: 100%;
@@ -317,6 +338,13 @@ nav {
   }
   .product-card {
     width: 240px;
+    padding: 8px;
+  }
+  .product-card:hover {
+    border: 1px solid var(--hospital-green);
+    border-radius: 20px;
+    color: var(--hospital-green);
+    padding: 7px;
   }
   .product-card img {
     width: 240px;
