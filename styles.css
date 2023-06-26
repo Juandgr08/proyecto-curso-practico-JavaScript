@@ -326,6 +326,12 @@ nav {
     align-items: center;
     justify-content: center;
   }
+  .add-to-cart-button img{
+    width: 36px;
+  }
+  .add-to-cart-button:active {
+    background-color: #83a588;
+  }
 
 
   /* Products List */
@@ -404,6 +410,9 @@ nav {
   .product-card img {
     width: 140px;
     height: 140px;
+  }
+  #shopping-cart {
+    height: 100%;
   }
 }
 

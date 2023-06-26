@@ -80,7 +80,6 @@ function initPage() {
 
     const productItem = document.querySelectorAll('#img-product');
     const addToCartIcon = document.querySelectorAll('#add-to-cart');
-    console.log(productItem);
 
     navEmail.addEventListener('click', toggleDesktopMenu);
     mobileMenuIcon.addEventListener('click', toggleMobileMenu);
@@ -88,6 +87,7 @@ function initPage() {
 
     for (let i = 0; i < productItem.length; i++) {
         addToCartIcon[i].addEventListener('click', function(){            
+            addToCartIcon[i].setAttribute('src', './icons/bt_added_to_cart.svg');
             addToCart(nameProduct[i], priceProduct[i], imgProduct[i]);
         });
         productItem[i].addEventListener('click', function(){
@@ -152,12 +152,12 @@ function openProductDetail(name, price, image, description) {
     `<p>$${price}.00</p>
     <p>${name}</p>
     <p>${description}</p>
-    <button id="add-to-cart-product-detail" class="primary-button add-to-cart-button">
-      <img src="./icons/bt_add_to_cart.svg" alt="add to cart">
+    <button class="primary-button add-to-cart-button">
+      <img src="./icons/bt_add_to_cart.png" alt="add to cart">
       Add to cart
     </button>`
 
-    const addToCartProductDetail = document.querySelector('#add-to-cart-product-detail');
+    const addToCartProductDetail = document.querySelector('.add-to-cart-button');
     addToCartProductDetail.addEventListener('click', function() {
         addToCart(name, price, image);
     })
